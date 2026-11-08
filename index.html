@@ -391,7 +391,7 @@ footer .footer-meta{flex-basis:100%;width:100%;display:flex;justify-content:spac
 .lane-strip:not([open])>.track-workspace{display:none}
 .lane-perf .lane-load{position:relative;display:inline-flex;align-items:center;justify-content:center;min-width:52px;min-height:26px;padding:5px 8px;border:1px solid #42454e;border-radius:4px;background:#0d0f12;color:#e4e4e9;font-size:9px;letter-spacing:.04em;cursor:pointer}
 .lane-perf .lane-load input[type=file]{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;border:0;opacity:0;cursor:pointer;color:transparent;font-size:0;background:transparent}
-.lane-card>.lane-bank{margin-top:4px}
+.lane-card>.track-wave{margin:7px 0;height:110px}.lane-card>.lane-bank{margin-top:4px}
 .lane-card .repo-bank-picker{width:auto;max-width:none}
 .lane-card .repo-bank-controls{grid-template-columns:minmax(0,1fr) max-content}
 .lane-presets{margin:0 0 8px;border-bottom:1px solid #2c2e34}
@@ -469,6 +469,174 @@ footer .footer-meta #status{
   footer .footer-meta>.lcd-display{justify-self:center;text-align:center}
   footer .footer-meta>.lcd-display{grid-row:1}
 }
+
+/* SABRE output console — transparent surfaces, fine rules, no black matte cards. */
+#pageMixer{padding:4px 0 10px;min-width:0}
+.output-mixer{--accent:#efb359;min-width:0;background:transparent;color:#e9e9eb}
+.console-head{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;border-top:1px solid #53565f;border-bottom:1px solid #32343b;padding:12px 2px 10px;margin-bottom:11px;background:transparent}
+.console-head h2{font:600 13px/1.2 'Trebuchet MS','Segoe UI',sans-serif;letter-spacing:.16em;margin:0 0 5px}.console-head h2 span{font-weight:400;color:#bbbcc5;font-size:10px}
+.console-head p{font-size:10px;color:#b9bbc5;margin:0;line-height:1.45}.console-head-actions{display:flex;gap:6px;flex-wrap:wrap}.console-head-actions button{font-size:9px;white-space:nowrap}
+.console-scroll{overflow-x:auto;overflow-y:hidden;scrollbar-color:#777986 transparent;scrollbar-width:thin;min-width:0;padding:0 0 12px;background:transparent;outline-offset:4px;border-left:1px solid #52555f;border-right:1px solid #2a2d34}
+.console-channels{display:flex;align-items:stretch;width:max-content;min-width:100%;background:transparent}
+.console-strip{flex:0 0 176px;width:176px;min-width:0;background:transparent;border:0;border-right:1px solid #3d4047;padding:9px 11px 13px;display:flex;flex-direction:column;gap:8px}
+.console-strip:first-child{border-left:1px solid #3d4047}.console-strip[data-active="true"]{border-top:2px solid #efb359;padding-top:7px}
+.console-strip-title{min-height:46px;display:flex;flex-direction:column;gap:3px}.console-strip-title strong{font:600 12px monospace;color:#efb359;letter-spacing:.12em}.console-track-name{display:block;font-size:9px;color:#bcc0cb;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:155px}
+.console-switches{display:grid;grid-template-columns:1fr 1fr;gap:4px}.console-switches button,.console-bottom button,.console-flat{padding:7px 3px;font-size:9px;line-height:1.2}
+.console-switches button[aria-pressed="true"],.console-bottom button[aria-pressed="true"]{background:#efb359;color:#0d1014;border-color:#efb359}
+.console-eq,.console-dynamics{border-top:1px solid #464951;padding-top:7px}
+.console-eq-label{font-size:9px;letter-spacing:.1em;color:#aeb0bb;margin:0 0 6px}
+.console-eq-dials,.console-dyn-dials{display:grid;grid-template-columns:1fr 1fr;gap:7px 3px}
+.console-dial-cell{display:flex;align-items:center;flex-direction:column;text-align:center;min-width:0;gap:2px}
+.console-dial-cell>label{font-size:9px;letter-spacing:.04em;color:#d6d7de;min-height:13px}
+.console-dial-cell>output{font:10px/1.35 monospace;color:#cbcdd6;white-space:nowrap}
+.console-dial{display:block;width:62px;height:62px;padding:0!important;min-width:0;border:0!important;border-radius:50%;background:transparent!important;box-shadow:none!important;touch-action:none;cursor:grab}
+.console-dial svg{width:62px;height:62px;display:block;overflow:visible}.console-dial:active{cursor:grabbing}
+.console-dial-track{fill:none;stroke:#373b44;stroke-width:3;stroke-dasharray:118 157;transform:rotate(135deg);transform-origin:50% 50%}
+.console-dial-progress{stroke:#efb359;stroke-width:2.4;stroke-linecap:round;fill:none}.console-dial-face{fill:#14171c;stroke:#686b76;stroke-width:1.25}.console-dial-pointer line{stroke:#efb359;stroke-width:2;stroke-linecap:round}
+.console-detail{border-top:1px solid #393b43;border-bottom:1px solid #393b43;padding:7px 0;margin:0}.console-detail summary{font-size:9px;color:#d0d2dc}.console-detail-inner{padding:8px 2px}.console-detail-control{display:grid;grid-template-columns:44px 1fr;gap:1px 5px;align-items:center;font-size:9px}.console-detail-control input{grid-column:1/3;width:100%;margin:0}.console-detail-control output{font-size:9px;color:#c0c2cb;text-align:right}
+.console-mixer-end{display:grid;grid-template-columns:1fr 1fr;gap:2px;align-items:start;min-height:196px}.console-pan-dial{padding-top:9px}
+.console-fader-wrap{display:flex;align-items:center;flex-direction:column;gap:7px;padding-top:7px}.console-fader-wrap>label{font-size:9px;display:flex;align-items:center;flex-direction:column;gap:4px}.console-level-value{font:10px monospace;color:#efb359}
+.console-level{appearance:slider-vertical;-webkit-appearance:slider-vertical;writing-mode:vertical-lr;direction:rtl;width:26px!important;height:136px!important;min-height:136px!important;margin:0!important;cursor:pointer;accent-color:#efb359}
+.console-vu{height:9px;border:1px solid #4b4e58;border-radius:2px;overflow:hidden;background:transparent}.console-vu-bar{display:block;width:0;height:100%;background:linear-gradient(90deg,#669c75,#ceab65,#e17e63)}
+.console-bottom{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px}.console-flat{align-self:stretch;background:transparent;border-color:#464951}
+.console-footnote{border-top:1px solid #343740;padding:9px 2px 3px;margin:0;color:#a7aab4;font-size:10px;line-height:1.5}
+@media(max-width:720px){.console-strip{flex-basis:164px;width:164px;padding-left:8px;padding-right:8px}.console-head-actions{width:100%}.console-head-actions button{flex:1}.console-head h2{font-size:12px}}
+
+/* PERFORMANCE MIXER MATRIX: one parameter row; one dial per channel.
+   Keep original transparent instrument surface — no matte-black panel cards. */
+#pageMixer,.output-mixer{min-width:0;background:transparent}
+.console-head{margin-bottom:10px}
+.console-head-actions button{font-size:9px}
+.console-scroll{overflow-x:auto;overflow-y:visible;min-width:0;width:100%;padding:0 0 10px;scrollbar-color:#656872 transparent;background:transparent}
+.console-channels{display:flex;flex-direction:column;gap:0;min-width:1108px;width:100%;align-items:stretch;background:transparent}
+.console-matrix-row{display:grid;grid-template-columns:94px repeat(16,minmax(0,1fr));width:100%;min-width:0;align-items:center;border-bottom:1px solid #292d35;background:transparent;border-left:1px solid #52555f;border-right:1px solid #2a2d34}
+.console-matrix-row[data-section-start="true"]{border-top:1px solid #60626c}
+.console-matrix-row[data-type="dial"]{min-height:83px}
+.console-matrix-row[data-type="header"]{min-height:58px;border-top:1px solid #5b5e68}
+.console-matrix-row[data-type="switch"],.console-matrix-row[data-type="button"]{min-height:42px}
+.console-matrix-row[data-type="fader"]{min-height:57px}
+.console-matrix-row[data-type="meter"]{min-height:28px}
+.console-row-heading{position:sticky;left:0;z-index:3;align-self:stretch;display:flex;align-items:center;justify-content:flex-start;padding:0 5px;color:#babdc7;font:600 9px/1.4 'Segoe UI',sans-serif;letter-spacing:.08em;border-right:1px solid #52555f;background:#101217}
+.console-matrix-row[data-section-start="true"] .console-row-heading{color:#efb359}
+.console-matrix-cell{min-width:0;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:3px 1px;border-right:1px solid #22252c;background:transparent}
+.console-matrix-cell[data-active="true"]{background:#efb3590b;border-right-color:#45413c}
+.console-header-cell{min-height:55px;justify-content:center;align-items:center;gap:2px}
+.console-header-cell strong{color:#efb359;font:600 11px monospace;letter-spacing:.05em}
+.console-track-name{width:100%;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#aaadb9;font:8px/1.3 'Segoe UI',sans-serif;text-align:center}
+.console-matrix-cell .console-dial-cell{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;width:100%;min-height:76px;text-align:center;padding:0;border:0;background:transparent}
+.console-matrix-cell .console-dial-cell>label{display:none}
+.console-matrix-cell .console-dial-cell>output{font:9px/1.35 monospace;color:#caced8;white-space:nowrap;max-width:100%;overflow:hidden;letter-spacing:-.025em;margin-top:2px}
+.console-matrix-cell .console-dial,.console-matrix-cell .console-dial svg{width:52px;height:52px;min-width:52px;min-height:52px;display:block;touch-action:none;filter:none}
+.console-matrix-cell .console-dial{padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important;cursor:ns-resize;outline-offset:1px}
+.console-dial-track{fill:none;stroke:#474b55;stroke-width:2.4;stroke-dasharray:none;transform:none}
+.console-dial-progress{fill:none;stroke:#efb359;stroke-width:3;stroke-linecap:round;transform:none;transition:none!important}
+.console-dial-face{fill:#171a20;stroke:#797c88;stroke-width:1.3}
+.console-dial-pointer{stroke:#efb359;stroke-width:2.4;stroke-linecap:round;transition:none!important;transform:none!important}
+.console-dial-tick{stroke:#9499a5;stroke-width:1;stroke-opacity:.55}
+.console-matrix-cell .console-tiny-button{width:calc(100% - 5px);max-width:75px;min-width:0;padding:5px 0;font-size:8px;letter-spacing:0;white-space:nowrap;border:1px solid #434651;border-radius:3px;background:transparent;color:#d1d3dc}
+.console-matrix-cell .console-tiny-button[aria-pressed="true"]{border-color:#efb359;color:#13100a;background:#efb359}
+.console-matrix-cell .console-flat{padding:5px 1px;font-size:7.5px;white-space:nowrap}
+.console-level{appearance:auto!important;-webkit-appearance:auto!important;writing-mode:horizontal-tb!important;direction:ltr!important;display:block;width:calc(100% - 10px)!important;max-width:75px;height:20px!important;min-height:20px!important;margin:0!important;accent-color:#efb359;cursor:pointer}
+.console-level-value{font:9px monospace;color:#efb359}
+.console-vu{width:calc(100% - 12px);height:8px;border:1px solid #4b4e58;border-radius:2px;overflow:hidden;background:transparent;position:relative}
+.console-vu-bar{position:absolute;left:0;top:0;height:100%;width:var(--meter-level,0%);background:linear-gradient(90deg,#639b77,#d3ab60,#e27c64)}
+.console-footnote{margin-top:4px}
+@media(max-width:1280px){.console-channels{min-width:1108px}.console-matrix-row{grid-template-columns:84px repeat(16,minmax(0,1fr))}.console-matrix-cell .console-dial,.console-matrix-cell .console-dial svg{width:49px;height:49px;min-width:49px;min-height:49px}}
+@media(max-width:720px){.console-channels{min-width:1108px}.console-matrix-row{grid-template-columns:84px repeat(16,minmax(0,1fr))}.console-head-actions{width:auto}}
+
+/* Compact left parameter labels; full-width 16-channel control matrix with no phantom right column.
+   The mixer grid and its surrounding frame now share exactly the same width.
+   No dial geometry, audio routing, control IDs or panel fills change. */
+#pageMixer .console-matrix-row{grid-template-columns:56px repeat(16,minmax(0,1fr));}
+#pageMixer .console-matrix-row::after{content:none;display:none;}
+#pageMixer .console-row-heading{font-size:8px;line-height:1.3;letter-spacing:.015em;padding-inline:4px;overflow-wrap:normal;}
+
+/* Performance mixer refinements: centred matrix, quieter informational copy,
+   stable pointer hit testing. No panel fills are introduced. */
+#pageMixer .console-scroll{width:100%;}
+#pageMixer .console-channels{width:100%;min-width:1108px;margin-inline:0;}
+#pageMixer .console-head p{font-size:9px;line-height:1.4;}
+#pageMixer .console-footnote{font-size:9px;line-height:1.4;}
+#pageMixer .console-dial svg{pointer-events:none;user-select:none;-webkit-user-select:none;}
+#pageMixer .console-dial{user-select:none;-webkit-user-select:none;touch-action:none;}
+/* Keep selected channel transparent. Full-width matrix uses the native frame dimensions. */
+#pageMixer .console-matrix-cell[data-active="true"]{background:transparent;border-right-color:#22252c;}
+
+
+/* SABRE mixer-only alignment: compact shared title/info row, close waveform gap. */
+#pageMixer{margin-top:-20px;padding-top:0;}
+#pageMixer .console-head{padding:7px 2px 7px;margin-bottom:6px;gap:12px;}
+#pageMixer .console-head>div{display:flex;align-items:center;column-gap:16px;row-gap:3px;flex-wrap:wrap;flex:1;min-width:0;}
+#pageMixer .console-head h2{margin:0;flex:none;white-space:nowrap;}
+#pageMixer .console-head p{margin:0;flex:1 1 650px;min-width:0;}
+@media(max-width:820px){#pageMixer .console-head p{flex-basis:100%;}}
+
+/* Shared Sabre dial artwork: parameter glyph, fine arc and orbiting dot. */
+#pageMixer .console-dial{--accent:#efb359}
+#pageMixer .console-dial .control-geometry{stroke:var(--accent);opacity:.8}
+#pageMixer .console-dial-track{stroke:var(--accent);stroke-opacity:.23;stroke-width:1.3}
+#pageMixer .console-dial-progress{stroke:var(--accent);stroke-width:1.8}
+#pageMixer .console-dial .console-position{fill:var(--accent)}
+#pageMixer .console-dial[data-enabled="false"] svg{opacity:1}
+#pageMixer .console-dial:focus-visible{outline:2px solid #efb359;outline-offset:3px}
+
+/* Mixer bands share one colour across labels, values, rings and parameter glyphs. */
+#pageMixer [data-row="lowGain"]{--band-color:#f25a65}
+#pageMixer [data-row="midGain"],#pageMixer [data-row="midFreq"],#pageMixer [data-row="midQ"]{--band-color:#50cf7b}
+#pageMixer [data-row="highGain"]{--band-color:#8580f4}
+#pageMixer [data-row="threshold"],#pageMixer [data-row="ratio"],#pageMixer [data-row="attack"],#pageMixer [data-row="release"]{--band-color:#efb359}
+#pageMixer [data-row="pan"]{--band-color:#79d6b0}
+#pageMixer [data-type="dial"]>.console-row-heading{color:#d6d7de}
+#pageMixer .console-dial-cell>output{color:#cbcdd6}
+.console-band-legend{display:flex;gap:14px;flex-wrap:wrap;font:9px monospace;margin:6px 0 9px}
+.console-band-legend span::before{content:'●';margin-right:5px}
+
+/* EQ gain drives colour strength; frequency and Q share their band's gain colour. */
+#pageMixer .console-position,#pageMixer .console-dial-progress{filter:drop-shadow(0 0 var(--band-glow,0px) var(--accent))}
+
+/* Slightly larger mixer dials, retaining the existing 16-channel layout. */
+#pageMixer .console-matrix-cell .console-dial,
+#pageMixer .console-matrix-cell .console-dial svg{width:64px;height:64px;min-width:64px;min-height:64px}
+@media(max-width:1280px){
+ #pageMixer .console-matrix-cell .console-dial,
+ #pageMixer .console-matrix-cell .console-dial svg{width:64px;height:64px;min-width:64px;min-height:64px}
+}
+
+/* Highlight the dial being used without changing its dimensions or artwork. */
+.rotary-dial:is(:hover,:focus,:active) .control-surface,
+.console-dial:is(:hover,:focus,:active) .control-surface{stroke:#fff;stroke-width:.8}
+
+/* Match standard Sabre dials at every viewport size; scroll the matrix as needed. */
+#pageMixer .console-channels{min-width:1210px}
+#pageMixer .console-matrix-row[data-type="dial"]{min-height:90px}
+
+
+
+/* Original physical knob outline and pointer, with an unfilled centre. */
+#pageMixer .console-dial-face{fill:none;stroke:#797c88;stroke-width:1.3}
+#pageMixer .console-dial:is(:hover,:focus,:active) .console-dial-face{stroke:#fff;stroke-width:.8}
+
+/* Both dial styles share one parameter and interaction implementation. */
+#outputMixer .mixer-graphic{display:none}
+#outputMixer[data-dial-style="graphic"] .mixer-graphic{display:block}
+#outputMixer[data-dial-style="graphic"] .console-dial-pointer,
+#outputMixer[data-dial-style="graphic"] .console-dial-tick{display:none}
+#pageMixer #outputMixer[data-dial-style="graphic"] .console-dial-face{stroke:none}
+#pageMixer #outputMixer[data-dial-style="graphic"] .console-dial:is(:hover,:focus,:active) .console-dial-face{stroke:#fff;stroke-width:.8}
+#mixerDialStyle{align-self:flex-start;white-space:nowrap}
+#mixerDialStyle[aria-pressed="true"]{color:#efb359;border-color:#efb359}
+
+/* One application-wide dial preference; every style uses the same controls. */
+html .rotary-dial,html .rotary-dial svg{width:64px!important;height:64px!important;min-width:64px;min-height:64px}
+html .rotary-dial .control-surface{fill:none}
+.workspace-physical-pointer{stroke:var(--accent);stroke-width:2.4;stroke-linecap:round}
+html:not([data-dial-style="graphic"]) .rotary-dial .control-surface{stroke:#797c88;stroke-width:1.3}
+html:not([data-dial-style="graphic"]) .rotary-dial .control-geometry,
+html:not([data-dial-style="graphic"]) .workspace-graphic-dot{display:none}
+html[data-dial-style="graphic"] .workspace-physical-pointer,
+html[data-dial-style="graphic"] .workspace-dial-ticks{display:none}
+html .rotary-dial:is(:hover,:focus,:active) .control-surface{stroke:#fff;stroke-width:.8}
+#transport #mixerDialStyle{align-self:center}
 </style></head><body><main><div id="pinnedControls"><header class="instrument-head"><div class="compact-brand-row"><div class="brand">Continuum</div><h1>Sabre</h1><div class="subtitle">Tracks · Bus · Effects</div></div></header><div class="transport" id="transport"><button id="choose">LOAD SAMPLE ↑</button><div class="mode-switch" role="group" aria-label="Playback source"><button id="sampleMode" aria-pressed="true">SAMPLE</button><button id="chopsMode" aria-pressed="false">CHOPS</button><button id="grainsMode" aria-pressed="false">GRAINS</button></div><select id="playbackMode" hidden aria-label="Playback mode"><option value="loop" selected>Whole sample</option><option value="chop">Piano-roll chops</option><option value="granular">Granular sample</option></select><button id="play" class="primary" disabled>▶ PLAY</button><span id="transportMode" class="wide-label">WHOLE SAMPLE / LOOP</span><span id="engineState" class="meter" hidden>STANDBY</span><label class="bpm">TEMPO <input id="bpm" type="number" min="40" max="220" step="1" value="130" aria-label="Tempo in beats per minute"></label><div class="master-control"><label for="outputGain">MASTER</label><input id="outputGain" type="range" min="-24" max="6" step="1" value="0"><output class="readout" id="outputGainValue">0 dB</output></div></div><div id="waveSentinel" class="wave-sentinel"></div><section id="waveDock" class="panel wave-dock is-compact" aria-label="Pinned live sample waveform"><div class="slice-legend"><span style="color:#efb359">■ EDIT SELECTION</span><span style="color:#a789f6">■ PLAYING HIT</span></div><div class="wave-display"><canvas id="wave" role="img" aria-label="Waveform of the loaded sample"></canvas></div></section></div><div id="pinnedSpacer" aria-hidden="true"></div><section class="lcd-display" aria-label="Live instrument display"><span id="sampleName" class="lcd-title">No sample loaded</span><span class="lcd-sub" id="lcdDetail">LOAD A SAMPLE · EFFECTS OFF</span><span class="lcd-indicator"><span class="lcd-led" id="lcdLed"></span><span id="lcdState">STANDBY</span></span><span id="lcdSliceCount">0 SLICES / 1 BAR</span></section><details class="panel sample" id="dropzone" aria-label="Sample Deck"><summary class="sample-head"><h2>SAMPLE DECK</h2></summary><div id="sampleDeckControls"><input id="file" class="sr" type="file" accept="audio/*,.wav,.aif,.aiff,.mp3,.ogg,.flac,.m4a" aria-label="Choose an audio file"><div class="chop-controls">
 <label>SLICE COUNT<select id="sliceCount"><option value="4">4</option><option value="8">8</option><option value="16" selected>16</option><option value="32">32</option></select></label>
 <button id="equalSlices" disabled>EQUAL SLICES</button><button id="detectSlices" disabled>DETECT HITS</button>
@@ -553,6 +721,27 @@ footer .footer-meta #status{
 const $=id=>document.getElementById(id),clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
 const BUS_DSP_SOURCE="class SabreMixDucker extends AudioWorkletProcessor {\n constructor(o){super();this.c=o.processorOptions.config;this.origin=o.processorOptions.origin||0;this.end=o.processorOptions.end??Infinity;this.env=0;this.low=0;this.gain=1;this.counter=0;this.lastStep=-1;this.reductions=new Float32Array(16);this.port.onmessage=e=>{const m=e.data;if(m.type==='config'){if(m.config.trigger!==this.c.trigger){this.env=0;this.low=0}this.c=m.config;this.lastStep=-1}else if(m.type==='timeline'){this.origin=m.origin;this.end=m.end??Infinity}};}\n value(k,step){const c=this.c,l=c.automationOn&&c.automation[k];return l&&l[step]!=null?l[step]:c[k];}\n process(inputs,outputs){const out=outputs[0],L=out[0],R=out[1]||L,c=this.c,sr=sampleRate,band=1-Math.exp(-2*Math.PI*180/sr);let maxKey=0,minGain=1;\n for(let n=0;n<L.length;n++){const t=currentTime+n/sr,beats=Math.max(0,t-this.origin)*c.bpm/60,step=Math.floor(beats*4)%16;\n if(step!==this.lastStep){this.lastStep=step;this.depth=this.value('depth',step);this.threshold=this.value('threshold',step);this.attack=1-Math.exp(-1/(Math.max(.2,this.value('attack',step))*.001*sr));this.release=1-Math.exp(-1/(Math.max(5,this.value('release',step))*.001*sr));}\n const key=inputs[c.trigger]||[],ka=key[0]?.[n]||0,kb=(key[1]||key[0])?.[n]||0,x=(ka+kb)*.5;this.low+=(x-this.low)*band;const sample=c.keyBand==='low'?this.low:c.keyBand==='high'?x-this.low:x;const a=Math.abs(sample);this.env+=(a-this.env)*(a>this.env?this.attack:this.release);maxKey=Math.max(maxKey,this.env);\n let reduction=0;const active=c.duckOn&&t>=this.origin&&t<this.end;\n if(active){if(c.mode==='audio')reduction=Math.max(0,Math.min(this.depth,(20*Math.log10(Math.max(1e-9,this.env))-this.threshold)*.75));else{const period=c.mode==='pulse'?c.division:.25,idx=Math.floor(beats/period),within=(beats-idx*period)*60/c.bpm;if((c.mode==='pulse'||c.pattern[idx%16])&&within<.025)reduction=this.depth;}}\n const target=Math.pow(10,-reduction/20);this.gain+=(target-this.gain)*(target<this.gain?this.attack:this.release);minGain=Math.min(minGain,this.gain);let l=0,r=0;\n for(let i=0;i<16;i++){const input=inputs[i];if(!input?.length)continue;const g=c.duckOn&&c.targets[i]&&(c.mode!=='audio'||i!==c.trigger)?this.gain:1;l+=(input[0]?.[n]||0)*g;r+=((input[1]||input[0])?.[n]||0)*g;this.reductions[i]=g;}\n L[n]=Number.isFinite(l)?l:0;if(R!==L)R[n]=Number.isFinite(r)?r:0;\n }\n this.counter+=L.length;if(this.counter>=2048){this.counter=0;this.port.postMessage({type:'meter',key:maxKey,gain:minGain,step:this.lastStep,tracks:Array.from(this.reductions)});}return true;\n }\n}\nregisterProcessor('sabre-mix-ducker',SabreMixDucker);\n";
 const BUS_SPECS={hp:{id:'busHp',label:'LOW CUT',min:20,max:2000,def:30,unit:'Hz',log:true},lowFreq:{id:'busLowFreq',label:'LOW FREQ',min:40,max:800,def:120,unit:'Hz',log:true},lowGain:{id:'busLowGain',label:'LOW SHELF',min:-18,max:12,def:0,unit:'dB'},midFreq:{id:'busMidFreq',label:'MID FREQ',min:150,max:10000,def:1200,unit:'Hz',log:true},midGain:{id:'busMidGain',label:'MID GAIN',min:-18,max:12,def:0,unit:'dB'},midQ:{id:'busMidQ',label:'MID Q',min:.2,max:8,def:1,unit:'Q'},highFreq:{id:'busHighFreq',label:'HIGH FREQ',min:1500,max:16000,def:8000,unit:'Hz',log:true},highGain:{id:'busHighGain',label:'HIGH SHELF',min:-18,max:12,def:0,unit:'dB'},depth:{id:'busDepth',label:'DUCK DEPTH',min:0,max:24,def:12,unit:'dB'},threshold:{id:'busThreshold',label:'THRESHOLD',min:-60,max:0,def:-24,unit:'dB'},attack:{id:'busAttack',label:'ATTACK',min:.2,max:100,def:5,unit:'ms'},release:{id:'busRelease',label:'RELEASE',min:5,max:1500,def:180,unit:'ms'}};
+// Independent channel-strip settings. All sixteen strips run before the existing shared mix bus.
+const CHANNEL_DEFAULT=()=>({eqOn:false,dynOn:false,lowGain:0,midGain:0,midFreq:1200,midQ:1.1,highGain:0,threshold:-20,ratio:3,attack:15,release:180});
+const CHANNEL_LIMITS={lowGain:[-24,24],midGain:[-24,24],midFreq:[20,20000],midQ:[.1,18],highGain:[-24,24],threshold:[-100,0],ratio:[1,20],attack:[.1,1000],release:[10,1000]};
+function channelValidate(s){const next=CHANNEL_DEFAULT();if(s&&typeof s==='object'){for(const[k,[min,max]]of Object.entries(CHANNEL_LIMITS))if(Number.isFinite(s[k]))next[k]=clamp(s[k],min,max);next.eqOn=s.eqOn===true;next.dynOn=s.dynOn===true;}return next;}
+let channelStates=Array.from({length:16},CHANNEL_DEFAULT),channelMixerRender=null;
+const channelSnapshot=()=>channelStates.map(s=>({...s}));
+function channelRestore(data){channelStates=Array.from({length:16},(_,i)=>channelValidate(Array.isArray(data)?data[i]:null));for(const b of busRuntimes)if(b.ctx===context)for(let i=0;i<16;i++)channelApply(b,i);channelMixerRender?.();}
+function channelApply(b,i){const strip=b.channelStrips?.[i];if(!strip)return;const s=channelStates[i],now=b.ctx.currentTime,smooth=(p,v)=>p.setTargetAtTime(v,now,.012);
+ smooth(strip.lo.gain,s.lowGain);smooth(strip.mid.gain,s.midGain);smooth(strip.mid.frequency,Math.min(s.midFreq,b.ctx.sampleRate*.44));smooth(strip.mid.Q,s.midQ);smooth(strip.hi.gain,s.highGain);
+ smooth(strip.eqDry.gain,s.eqOn?0:1);smooth(strip.eqWet.gain,s.eqOn?1:0);
+ smooth(strip.comp.threshold,s.threshold);smooth(strip.comp.ratio,s.ratio);smooth(strip.comp.attack,s.attack/1000);smooth(strip.comp.release,s.release/1000);
+ smooth(strip.dynDry.gain,s.dynOn?0:1);smooth(strip.dynWet.gain,s.dynOn?1:0);
+}
+function channelSet(i,key,value){if(!Number.isInteger(i)||i<0||i>=16)return;const s=channelStates[i];if(key==='eqOn'||key==='dynOn')s[key]=!!value;else if(CHANNEL_LIMITS[key]){if(!Number.isFinite(value))return;s[key]=clamp(value,...CHANNEL_LIMITS[key]);if(['lowGain','midGain','midFreq','midQ','highGain'].includes(key))s.eqOn=true;if(['threshold','ratio','attack','release'].includes(key))s.dynOn=true;}else return;
+ for(const b of busRuntimes)if(b.ctx===context)channelApply(b,i);channelMixerRender?.(i);
+}
+function channelBuild(ctx,source){const lo=ctx.createBiquadFilter(),mid=ctx.createBiquadFilter(),hi=ctx.createBiquadFilter(),eqDry=ctx.createGain(),eqWet=ctx.createGain(),eqSum=ctx.createGain(),comp=ctx.createDynamicsCompressor(),dynDry=ctx.createGain(),dynWet=ctx.createGain(),out=ctx.createGain(),meter=ctx.createAnalyser();
+ lo.type='lowshelf';lo.frequency.value=120;mid.type='peaking';hi.type='highshelf';hi.frequency.value=8000;comp.knee.value=6;meter.fftSize=256;
+ source.connect(lo);lo.connect(mid);mid.connect(hi);hi.connect(eqWet);source.connect(eqDry);eqWet.connect(eqSum);eqDry.connect(eqSum);eqSum.connect(comp);eqSum.connect(dynDry);comp.connect(dynWet);dynDry.connect(out);dynWet.connect(out);out.connect(meter);
+ return {lo,mid,hi,eqDry,eqWet,eqSum,comp,dynDry,dynWet,out,meter,meterSamples:new Float32Array(256),nodes:[lo,mid,hi,eqDry,eqWet,eqSum,comp,dynDry,dynWet,out,meter]};
+}
 const busDefaults=()=>Object.assign(Object.fromEntries(Object.entries(BUS_SPECS).map(([k,s])=>[k,s.def])),{eqOn:false,duckOn:false,mode:'audio',trigger:0,keyBand:'low',division:1,targets:Array.from({length:16},(_,i)=>i!==0),pattern:Array.from({length:16},(_,i)=>i%4===0),automationOn:false,arm:false,autoDest:'midGain',automation:{}});
 let busState=busDefaults(),busView=null,busMeter=null;const busContexts=new WeakMap(),busInputs=new WeakMap(),busRuntimes=new Set();
 function busSnapshot(){return JSON.parse(JSON.stringify(busState))}
@@ -563,11 +752,11 @@ function busConfig(){return {...busSnapshot(),bpm:clamp(Number($('bpm').value)||
 function busParamValue(config,k,time,origin){const step=Math.floor(Math.max(0,time-origin)*config.bpm/60*4)%16,lane=config.automationOn&&config.automation[k];return lane&&lane[step]!=null?lane[step]:config[k];}
 function busEQNodes(ctx){const hp=ctx.createBiquadFilter(),lo=ctx.createBiquadFilter(),mid=ctx.createBiquadFilter(),hi=ctx.createBiquadFilter();hp.type='highpass';hp.Q.value=.707;lo.type='lowshelf';mid.type='peaking';hi.type='highshelf';hp.connect(lo);lo.connect(mid);mid.connect(hi);return{hp,lo,mid,hi};}
 function busEQParams(b){return{hp:b.eq.hp.frequency,lowFreq:b.eq.lo.frequency,lowGain:b.eq.lo.gain,midFreq:b.eq.mid.frequency,midGain:b.eq.mid.gain,midQ:b.eq.mid.Q,highFreq:b.eq.hi.frequency,highGain:b.eq.hi.gain};}
-function busCreate(ctx,destination,origin=ctx.currentTime,end=Infinity){const c=busConfig(),routes=Array.from({length:16},()=>ctx.createGain()),input=routes[0],master=ctx.createGain(),limit=ctx.createDynamicsCompressor(),safety=ctx.createWaveShaper(),analyser=ctx.createAnalyser(),eq=busEQNodes(ctx),eqDry=ctx.createGain(),eqWet=ctx.createGain(),eqSum=ctx.createGain();let node=null;
+function busCreate(ctx,destination,origin=ctx.currentTime,end=Infinity){const c=busConfig(),routes=Array.from({length:16},()=>ctx.createGain()),channelStrips=routes.map(route=>channelBuild(ctx,route)),input=routes[0],master=ctx.createGain(),limit=ctx.createDynamicsCompressor(),safety=ctx.createWaveShaper(),analyser=ctx.createAnalyser(),eq=busEQNodes(ctx),eqDry=ctx.createGain(),eqWet=ctx.createGain(),eqSum=ctx.createGain();let node=null;
  try{node=new AudioWorkletNode(ctx,'sabre-mix-ducker',{numberOfInputs:16,numberOfOutputs:1,outputChannelCount:[2],channelCount:2,channelCountMode:'explicit',processorOptions:{config:c,origin,end}})}catch(e){if(c.duckOn)throw Error('Sidechain needs AudioWorklet support. Open Sabre over HTTPS, or turn Duck off to use the bus EQ.');}
- if(node)routes.forEach((g,i)=>g.connect(node,0,i));const front=node||ctx.createGain();if(!node)routes.forEach(g=>g.connect(front));front.connect(eqDry);eqDry.connect(eqSum);front.connect(eq.hp);eq.hi.connect(eqWet);eqWet.connect(eqSum);eqSum.connect(master);master.connect(limit);limit.connect(safety);safety.connect(analyser);analyser.connect(destination);
+ if(node)channelStrips.forEach((strip,i)=>strip.meter.connect(node,0,i));const front=node||ctx.createGain();if(!node)channelStrips.forEach(strip=>strip.meter.connect(front));front.connect(eqDry);eqDry.connect(eqSum);front.connect(eq.hp);eq.hi.connect(eqWet);eqWet.connect(eqSum);eqSum.connect(master);master.connect(limit);limit.connect(safety);safety.connect(analyser);analyser.connect(destination);
  eqDry.gain.value=c.eqOn?0:1;eqWet.gain.value=c.eqOn?1:0;master.gain.value=.72*Math.pow(10,Number($('outputGain').value)/20);limit.threshold.value=-3;limit.knee.value=4;limit.ratio.value=8;limit.attack.value=.003;limit.release.value=.15;safety.curve=Float32Array.from({length:2049},(_,i)=>Math.tanh((i/1024-1)*1.15)/1.15);analyser.fftSize=256;
- const b={ctx,input,master,analyser,node,eq,eqDry,eqWet,origin,end,config:c,eqThrough:origin,nodes:[...routes,front,eqDry,eqWet,eqSum,...Object.values(eq),master,limit,safety,analyser],route:i=>routes[clamp(i,0,15)]};busInputs.set(input,b);busRuntimes.add(b);if(node)node.port.onmessage=e=>{if(ctx===context){busMeter={...e.data,bus:b};}};for(const[k,param]of Object.entries(busEQParams(b)))param.value=c[k];busSchedule(b,Math.min(end,origin+.2));return b;}
+ const b={ctx,input,master,analyser,node,eq,eqDry,eqWet,channelStrips,origin,end,config:c,eqThrough:origin,nodes:[...routes,...channelStrips.flatMap(s=>s.nodes),front,eqDry,eqWet,eqSum,...Object.values(eq),master,limit,safety,analyser],route:i=>routes[clamp(i,0,15)]};for(let i=0;i<16;i++)channelApply(b,i);busInputs.set(input,b);busRuntimes.add(b);if(node)node.port.onmessage=e=>{if(ctx===context){busMeter={...e.data,bus:b};}};for(const[k,param]of Object.entries(busEQParams(b)))param.value=c[k];busSchedule(b,Math.min(end,origin+.2));return b;}
 function busRoute(destination,index){const b=busInputs.get(destination);return b?b.route(index):destination;}
 function busRelease(b){if(!b)return;busRuntimes.delete(b);if(b.node){b.node.port.onmessage=null;b.node.port.close()}if(busMeter?.bus===b)busMeter=null;}
 function busUpdate(b){if(!b||b.ctx!==context)return;const c=busConfig(),now=b.ctx.currentTime;b.config=c;b.node?.port.postMessage({type:'config',config:c});b.eqDry.gain.setTargetAtTime(c.eqOn?0:1,now,.015);b.eqWet.gain.setTargetAtTime(c.eqOn?1:0,now,.015);for(const param of Object.values(busEQParams(b))){if(param.cancelAndHoldAtTime)param.cancelAndHoldAtTime(now);else param.cancelScheduledValues(now)}b.eqThrough=Math.max(now,b.origin);busSchedule(b,Math.min(b.end,now+.16));}
@@ -1048,7 +1237,7 @@ function arc(end){const a=point(-135),b=point(end);return 'M '+a.join(' ')+' A 2
 function dialValue(angle,min,max,step){return clamp(min+Math.round(((clamp(angle,-135,135)+135)/270)*(max-min)/step)*step,min,max)}
 const dials=[];
 for(const mount of document.querySelectorAll('[data-rotary]')){const id=mount.dataset.rotary,input=$(id),button=document.createElement('button');button.type='button';button.className='rotary-dial';button.setAttribute('role','slider');button.setAttribute('aria-label',names[id]||grainLabels[id]||id);button.title=(names[id]||grainLabels[id]||id)+' · drag up/down; Shift for fine adjustment; arrows adjust; double-click resets';let ticks='';for(let i=0;i<=10;i++){const a=point(-135+i*27,29),b=point(-135+i*27,31);ticks+='<line class="dial-tick" x1="'+a[0]+'" y1="'+a[1]+'" x2="'+b[0]+'" y2="'+b[1]+'"/>'}
-button.innerHTML='<svg viewBox="0 0 64 64" aria-hidden="true"><circle class="control-surface" cx="32" cy="32" r="23"/><path class="dial-track" d="'+arc(135)+'"/><path class="rotary-progress"/><path class="control-geometry"/><circle class="base-position" cx="32" cy="4" r="2"/><g class="rotary-indicator"><circle class="rotary-pointer" cx="32" cy="4" r="2.1"/></g></svg>';mount.append(button);let dragging=false,startX=0,startY=0,startValue=0;const resetValue=Number(input.value);const limits=()=>({min:Number(input.min),max:Number(input.max),step:Number(input.step)||1});
+button.innerHTML='<svg viewBox="0 0 64 64" aria-hidden="true"><circle class="control-surface" cx="32" cy="32" r="23"/><g class="workspace-dial-ticks">'+ticks+'</g><path class="dial-track" d="'+arc(135)+'"/><path class="rotary-progress"/><path class="control-geometry"/><circle class="base-position" cx="32" cy="4" r="2"/><g class="rotary-indicator"><circle class="rotary-pointer workspace-graphic-dot" cx="32" cy="4" r="2.1"/><line class="workspace-physical-pointer" x1="32" y1="32" x2="32" y2="16"/></g></svg>';mount.append(button);let dragging=false,startX=0,startY=0,startValue=0;const resetValue=Number(input.value);const limits=()=>({min:Number(input.min),max:Number(input.max),step:Number(input.step)||1});
 const set=value=>{if(input.disabled)return;const {min,max}=limits();input.value=String(clamp(Number(value.toFixed(6)),min,max));input.dispatchEvent(new Event('input',{bubbles:true}));sync()};
 const rotate=e=>{const{min,max,step}=limits(),sensitivity=e.shiftKey?900:150,delta=(startY-e.clientY)+(e.clientX-startX)*.4;set(min+Math.round((startValue-min+delta*(max-min)/sensitivity)/step)*step)};
 button.addEventListener('pointerdown',e=>{if(button.disabled||e.button!==0)return;e.preventDefault();button.focus();dragging=true;startX=e.clientX;startY=e.clientY;startValue=Number(input.value);button.setPointerCapture(e.pointerId)});button.addEventListener('pointermove',e=>{if(dragging)rotate(e)});button.addEventListener('dblclick',()=>set(resetValue));
@@ -1425,9 +1614,9 @@ function installSampleLanes(){
  const defaultSound=linkSoundSnapshot();defaultSound.performance.enabled=false;defaultSound.performance.states={};
  function restore(index){restoring=true;const wasPlaying=playing,wasPreparing=preparingPlayback,bpm=$('bpm').value,master=$('outputGain').value;playing=false;preparingPlayback=false;live=null;focus=index;const l=lanes[index];buffer=l.audio;filename=l.name;wavePeaks=l.peaks;samplePeak=l.peak;keyEnvelope=l.key;preparedCache=null;prepareRevision++;stableState.grainAudio=l.grain;stableState.grainName=l.grainName;stableState.phaseAudio=l.phase;stableState.phaseName=l.phaseName;stableState.states={};const p=structuredClone(l.sound||defaultSound);p.values.bpm=bpm;p.values.outputGain=master;filterSectionEnabled=!!p.filter;echoEnabled=!!p.echo;distortionEnabled=!!p.distortion;cuts=p.pianoRoll?.cuts?.slice()||[];chopNotes=p.pianoRoll?.notes?.map(n=>({...n}))||[];linkWriteSound(p);$('bpm').value=bpm;$('outputGain').value=master;$('sampleBpm').value=l.bpm;$('sampleBarCount').value=l.bars;chopSelected=l.edit?.selected??null;grooveUndo=l.edit?.undo||null;$('undoGroove').disabled=!grooveUndo;if(l.edit){$('sliceCount').value=l.edit.count;$('sliceSensitivity').value=l.edit.sensitivity;setChopLength(l.edit.noteLength);$('chopVelocity').value=l.edit.velocity;}for(const[id,label,on]of [['filterToggle','FILTER / SQUELCH',filterSectionEnabled],['echoToggle','ECHO',echoEnabled],['distortionToggle','DISTORTION',distortionEnabled]]){$(id).setAttribute('aria-pressed',String(on));$(id).textContent=label+' · '+(on?'ON':'OFF')}for(const id of chopControls)$(id).disabled=!buffer;$('dryAudition').disabled=!buffer;$('play').disabled=!lanes.some(l=>l.audio);$('export').disabled=!lanes.some(l=>l.audio)||exporting;$('sampleName').textContent=filename||'No sample loaded';$('sampleLevel').textContent=buffer?'Sample peak: '+(samplePeak?20*Math.log10(samplePeak):-Infinity).toFixed(1)+' dBFS':'No sample loaded';if(buffer){sliceMenu();if(l.edit)$('sliceSelect').value=l.edit.slice;}$('pianoStyle').value='custom';playing=wasPlaying;preparingPlayback=wasPreparing;restoring=false;selectLive();renderRows();drawWave();renderChopRoll();updateReadouts();showBpm();}
  function selectLive(){if(enabled)$('transportMode').textContent='LANE '+(focus+1)+' / '+(stableState.enabled?stableState.focus.toUpperCase():$('playbackMode').value==='loop'?'SAMPLE':$('playbackMode').value.toUpperCase());live=graphs.find(g=>g.lane===focus&&g.part===(stableState.enabled?stableState.focus:'single'))||graphs.find(g=>g.lane===focus)||null}
- function renderRows(){for(let i=0;i<TRACK_COUNT;i++){const l=lanes[i],row=$('sampleLane'+i);row.dataset.active=String(i===focus);row.querySelector('.lane-name').textContent=l.name||'Empty · load a sample';row.querySelector('.lane-meta').textContent=l.audio?(l.bpmKnown?'':'EST. ')+l.bpm.toFixed(2)+' BPM':'—';row.querySelector('[data-action="edit"]').setAttribute('aria-pressed',String(i===focus));for(const k of ['mute','solo'])row.querySelector('[data-action="'+k+'"]').setAttribute('aria-pressed',String(l[k]));row.querySelector('[data-action="level"]').value=l.level;row.querySelector('[data-action="pan"]').value=l.pan;} }
+ function renderRows(){for(let i=0;i<TRACK_COUNT;i++){const l=lanes[i],row=$('sampleLane'+i);row.dataset.active=String(i===focus);row.querySelector('.lane-name').textContent=l.name||'Empty · load a sample';row.querySelector('.lane-meta').textContent=l.audio?(l.bpmKnown?'':'EST. ')+l.bpm.toFixed(2)+' BPM':'—';row.querySelector('[data-action="edit"]').setAttribute('aria-pressed',String(i===focus));for(const k of ['mute','solo'])row.querySelector('[data-action="'+k+'"]').setAttribute('aria-pressed',String(l[k]));row.querySelector('[data-action="level"]').value=l.level;row.querySelector('[data-action="pan"]').value=l.pan;} channelMixerRender?.(); }
  function showBpm(){$('sampleBpmReadout').textContent=buffer?(lanes[focus].bpmKnown?'Sample '+Number($('sampleBpm').value).toFixed(2)+' BPM':'Set bars → BPM from length'):'No sample loaded'}
- for(let i=0;i<TRACK_COUNT;i++){const row=document.createElement('details');row.id='sampleLane'+i;row.className='lane-strip';row.open=false;row.innerHTML='<summary><strong>TRACK '+(i+1)+'</strong><span class="lane-name"></span><span class="lane-meta"></span><div class="lane-perf"><button data-action="edit" type="button">DETAIL</button><label class="lane-load">LOAD<input type="file" accept="audio/*,.wav,.aif,.aiff,.mp3,.ogg,.flac,.m4a" data-action="file" aria-label="Load sample into track '+(i+1)+'"></label><button data-action="mute" type="button" aria-pressed="false" aria-label="Mute track '+(i+1)+'">M</button><button data-action="solo" type="button" aria-pressed="false" aria-label="Solo track '+(i+1)+'">S</button><label>LVL<input data-action="level" type="range" min="0" max="100" value="75" aria-label="Track '+(i+1)+' level"></label><label>PAN<input data-action="pan" type="range" min="-100" max="100" value="0" aria-label="Track '+(i+1)+' pan"></label></div></summary>';$('laneRows').append(row);row.querySelector('summary').addEventListener('click',e=>{const t=e.target;if(t.closest('.lane-perf')&&!t.closest('button,input,select,textarea,a,label'))e.preventDefault()});row.querySelector('[data-action="edit"]').onclick=()=>{if(busy){message('Please wait for sample preparation.');return}capture();restore(i);message('Editing lane '+(i+1)+'. '+(running?'Other lanes keep playing.':'Controls below belong to this lane.'))};row.querySelector('[data-action="file"]').onchange=async e=>{const f=e.target.files[0];if(!f||busy)return;capture();restore(i);const ok=await load(f);if(ok!==false){capture();renderRows()}e.target.value=''};for(const key of ['mute','solo'])row.querySelector('[data-action="'+key+'"]').onclick=()=>{lanes[i][key]=!lanes[i][key];renderRows()};for(const key of ['level','pan'])row.querySelector('[data-action="'+key+'"]').oninput=e=>{lanes[i][key]=Number(e.target.value)};}
+ for(let i=0;i<TRACK_COUNT;i++){const row=document.createElement('details');row.id='sampleLane'+i;row.className='lane-strip';row.open=false;row.innerHTML='<summary><strong>TRACK '+(i+1)+'</strong><span class="lane-name"></span><span class="lane-meta"></span><div class="lane-perf"><button data-action="edit" type="button">DETAIL</button><label class="lane-load">LOAD<input type="file" accept="audio/*,.wav,.aif,.aiff,.mp3,.ogg,.flac,.m4a" data-action="file" aria-label="Load sample into track '+(i+1)+'"></label><button data-action="mute" type="button" aria-pressed="false" aria-label="Mute track '+(i+1)+'">M</button><button data-action="solo" type="button" aria-pressed="false" aria-label="Solo track '+(i+1)+'">S</button><label>LVL<input data-action="level" type="range" min="0" max="100" value="75" aria-label="Track '+(i+1)+' level"></label><label>PAN<input data-action="pan" type="range" min="-100" max="100" value="0" aria-label="Track '+(i+1)+' pan"></label></div></summary>';$('laneRows').append(row);row.querySelector('summary').addEventListener('click',e=>{const t=e.target;if(t.closest('.lane-perf')&&!t.closest('button,input,select,textarea,a,label'))e.preventDefault()});row.querySelector('[data-action="edit"]').onclick=()=>{if(busy){message('Please wait for sample preparation.');return}capture();restore(i);row.open=true;requestAnimationFrame(()=>paintTrack(i));message('Editing lane '+(i+1)+'. '+(running?'Other lanes keep playing.':'Controls below belong to this lane.'))};row.querySelector('[data-action="file"]').onchange=async e=>{const f=e.target.files[0];if(!f||busy)return;capture();restore(i);const ok=await load(f);if(ok!==false){capture();renderRows()}e.target.value=''};for(const key of ['mute','solo'])row.querySelector('[data-action="'+key+'"]').onclick=()=>{lanes[i][key]=!lanes[i][key];renderRows()};for(const key of ['level','pan'])row.querySelector('[data-action="'+key+'"]').oninput=e=>{lanes[i][key]=Number(e.target.value)};}
  $('lanesOn').onclick=()=>{if(busy)return;stop(false);capture();enabled=!enabled;$('lanesOn').setAttribute('aria-pressed',String(enabled));$('lanesOn').textContent='16-TRACK MIX · '+(enabled?'ON':'OFF');message(enabled?'All loaded lanes will play together.':'Original single-lane / Layer Mix playback selected.')};
  load=async function(file){if(busy)return false;capture();const index=focus;busy=true;try{const ok=await originalLoad(file);if(ok&&focus===index){lanes[index].revision++;lanes[index].bpmKnown=false;const estimatedBars=[1,2,4,8,16].reduce((a,b)=>Math.abs(Math.log((240*a/buffer.duration)/Number($('bpm').value)))<Math.abs(Math.log((240*b/buffer.duration)/Number($('bpm').value)))?a:b);$('sampleBarCount').value=estimatedBars;$('sampleBpm').value=clamp(240*estimatedBars/buffer.duration,1,999).toFixed(2);$('chopTempoSync').checked=true;$('chopBars').value=Math.min(8,estimatedBars);layoutChop();capture();renderRows();showBpm();message('Loaded lane '+(index+1)+'. Set its bar count and calculate sample BPM. Press Play for the mix.')}return ok}finally{busy=false}};
  $('sampleBpmCalculate').onclick=()=>{if(!buffer)return;const bpm=240*Number($('sampleBarCount').value)/buffer.duration;if(bpm<1||bpm>999){message('That bar count gives BPM outside 1–999. Check the sample length.');return}$('sampleBpm').value=bpm.toFixed(2);lanes[focus].bpmKnown=true;capture();showBpm();renderRows();message('BPM calculated from '+$('sampleBarCount').value+' bar(s). Verify against the break; this is a duration calculation, not beat detection.')};
@@ -1460,9 +1649,9 @@ function installSampleLanes(){
  async function unpackAudio(p,ctx){if(!p)return null;if(p.repoPath)throw Error("This session points at a remote sample. Load that file from this computer.");if(!Number.isInteger(p.rate)||p.rate<8000||p.rate>192000||!Array.isArray(p.channels)||p.channels.length<1||p.channels.length>8)throw Error('Invalid session audio.');const bytes=p.channels.map(s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0)));if(!bytes[0].length||bytes[0].length%4||bytes.some(b=>b.length!==bytes[0].length)||bytes[0].length/4/p.rate>600)throw Error('Invalid audio length.');const a=ctx.createBuffer(bytes.length,bytes[0].length/4,p.rate);bytes.forEach((b,c)=>{const v=new Float32Array(b.buffer);if(!v.every(Number.isFinite))throw Error('Invalid audio samples.');a.copyToChannel(v,c)});return a}
  function peaksFor(a){const d=a.getChannelData(0),bins=Math.min(2048,d.length),p={min:new Float32Array(bins),max:new Float32Array(bins)};for(let k=0;k<bins;k++){let lo=1,hi=-1;for(let i=Math.floor(k*d.length/bins);i<Math.floor((k+1)*d.length/bins);i++){lo=Math.min(lo,d[i]);hi=Math.max(hi,d[i])}p.min[k]=lo;p.max[k]=hi}return p}
  function validTrackSession(p){return !!p&&Array.isArray(p.lanes)&&((p.format==='continuum-sabre-four-lanes'&&p.version===1&&p.lanes.length===4)||(p.format==='continuum-sabre-tracks'&&p.version===2&&p.lanes.length===TRACK_COUNT))}
- function makeSabreState(linked=true){capture();return {format:'continuum-sabre-tracks',version:2,mixBus:busSnapshot(),bpm:Number($('bpm').value),master:Number($('outputGain').value),focus,lanes:lanes.map(l=>({name:l.name,sound:l.sound,level:l.level,pan:l.pan,mute:l.mute,solo:l.solo,bpm:l.bpm,bars:l.bars,bpmKnown:l.bpmKnown,peak:l.peak,audio:packAudio(l.audio,linked),grain:packAudio(l.grain,linked),grainName:l.grainName,phase:packAudio(l.phase,linked),phaseName:l.phaseName,key:l.key?{...l.key,values:Array.from(l.key.values)}:null}))}}
+ function makeSabreState(linked=true){capture();return {format:'continuum-sabre-tracks',version:2,mixBus:busSnapshot(),channelMixer:channelSnapshot(),bpm:Number($('bpm').value),master:Number($('outputGain').value),focus,lanes:lanes.map(l=>({name:l.name,sound:l.sound,level:l.level,pan:l.pan,mute:l.mute,solo:l.solo,bpm:l.bpm,bars:l.bars,bpmKnown:l.bpmKnown,peak:l.peak,audio:packAudio(l.audio,linked),grain:packAudio(l.grain,linked),grainName:l.grainName,phase:packAudio(l.phase,linked),phaseName:l.phaseName,key:l.key?{...l.key,values:Array.from(l.key.values)}:null}))}}
  $('saveLaneSession').onclick=async()=>{if(busy)return;capture();busy=true;message('Preparing a session with all sample audio…');try{await new Promise(r=>setTimeout(r,25));const data=makeSabreState(false);downloadJSON(data,'Sabre_16_Track_Session.json');message('Session saved with all loaded audio, notes and processing settings.')}catch(e){message('Session save: '+e.message)}finally{busy=false}};
- $('restoreLaneSession').onchange=async e=>{const file=e.target.files[0];if(!file||busy)return;busy=true;try{if(file.size>600*1024*1024)throw Error('Session exceeds 600 MB.');const p=JSON.parse(await file.text());if(!validTrackSession(p)||!Number.isFinite(p.bpm)||p.bpm<40||p.bpm>220)throw Error('Invalid Sabre session.');const ctx=await getContext(),next=[];for(const x of p.lanes){if(!Number.isFinite(x.bpm)||x.bpm<1||x.bpm>999||![1,2,4,8,16].includes(x.bars)||!Number.isFinite(x.peak)||x.peak<0)throw Error('Invalid lane metadata.');if(x.sound&&!validStoredSound(x.sound))throw Error('Invalid lane sound.');if(x.key&&(!Array.isArray(x.key.values)||!x.key.values.every(Number.isFinite)||!Number.isFinite(x.key.duration)||x.key.duration<=0||!Number.isFinite(x.key.peak)))throw Error('Invalid sidechain envelope.');if(x.sound?.performance?.states&&Object.values(x.sound.performance.states).some(v=>!validStoredSound(v)))throw Error('Invalid layer state.');const audio=await unpackAudio(x.audio,ctx);const r=x.sound?.pianoRoll;if(r&&audio&&(!Array.isArray(r.cuts)||r.cuts.length<2||r.cuts.length>65||r.cuts[0]!==0||Math.abs(r.cuts.at(-1)-audio.duration)>.0001||r.cuts.some((v,i)=>!Number.isFinite(v)||v<0||v>audio.duration+.0001||(i>0&&v<=r.cuts[i-1]))||!Array.isArray(r.notes)||r.notes.length>2048||r.notes.some(n=>!Number.isFinite(n.t)||n.t<0||!Number.isFinite(n.dur)||n.dur<=0||n.t+n.dur>Number(x.sound.values.chopBars)*16+.0001||!Number.isInteger(n.slice)||n.slice<0||n.slice>=r.cuts.length-1||!Number.isFinite(n.vel)||n.vel<1||n.vel>127)))throw Error('Invalid piano roll.');next.push({...x,audio,grain:await unpackAudio(x.grain,ctx),phase:await unpackAudio(x.phase,ctx),peaks:audio?peaksFor(audio):null,items:[],level:clamp(Number(x.level)||0,0,100),pan:clamp(Number(x.pan)||0,-100,100),key:x.key?{...x.key,values:Float32Array.from(x.key.values)}:null,revision:0})}while(next.length<TRACK_COUNT)next.push(emptyLane());stop(false);next.forEach((l,i)=>lanes[i]=l);busRestore(p.mixBus);$('bpm').value=p.bpm;$('outputGain').value=clamp(Number(p.master)||0,-24,6);for(let i=0;i<TRACK_COUNT;i++){restore(i);capture()}restore(clamp(Math.floor(Number(p.focus))||0,0,TRACK_COUNT-1));message('Session restored with sample audio. Press Play to start.')}catch(err){message('Session restore: '+err.message)}finally{busy=false;e.target.value=''}};
+ $('restoreLaneSession').onchange=async e=>{const file=e.target.files[0];if(!file||busy)return;busy=true;try{if(file.size>600*1024*1024)throw Error('Session exceeds 600 MB.');const p=JSON.parse(await file.text());if(!validTrackSession(p)||!Number.isFinite(p.bpm)||p.bpm<40||p.bpm>220)throw Error('Invalid Sabre session.');const ctx=await getContext(),next=[];for(const x of p.lanes){if(!Number.isFinite(x.bpm)||x.bpm<1||x.bpm>999||![1,2,4,8,16].includes(x.bars)||!Number.isFinite(x.peak)||x.peak<0)throw Error('Invalid lane metadata.');if(x.sound&&!validStoredSound(x.sound))throw Error('Invalid lane sound.');if(x.key&&(!Array.isArray(x.key.values)||!x.key.values.every(Number.isFinite)||!Number.isFinite(x.key.duration)||x.key.duration<=0||!Number.isFinite(x.key.peak)))throw Error('Invalid sidechain envelope.');if(x.sound?.performance?.states&&Object.values(x.sound.performance.states).some(v=>!validStoredSound(v)))throw Error('Invalid layer state.');const audio=await unpackAudio(x.audio,ctx);const r=x.sound?.pianoRoll;if(r&&audio&&(!Array.isArray(r.cuts)||r.cuts.length<2||r.cuts.length>65||r.cuts[0]!==0||Math.abs(r.cuts.at(-1)-audio.duration)>.0001||r.cuts.some((v,i)=>!Number.isFinite(v)||v<0||v>audio.duration+.0001||(i>0&&v<=r.cuts[i-1]))||!Array.isArray(r.notes)||r.notes.length>2048||r.notes.some(n=>!Number.isFinite(n.t)||n.t<0||!Number.isFinite(n.dur)||n.dur<=0||n.t+n.dur>Number(x.sound.values.chopBars)*16+.0001||!Number.isInteger(n.slice)||n.slice<0||n.slice>=r.cuts.length-1||!Number.isFinite(n.vel)||n.vel<1||n.vel>127)))throw Error('Invalid piano roll.');next.push({...x,audio,grain:await unpackAudio(x.grain,ctx),phase:await unpackAudio(x.phase,ctx),peaks:audio?peaksFor(audio):null,items:[],level:clamp(Number(x.level)||0,0,100),pan:clamp(Number(x.pan)||0,-100,100),key:x.key?{...x.key,values:Float32Array.from(x.key.values)}:null,revision:0})}while(next.length<TRACK_COUNT)next.push(emptyLane());stop(false);next.forEach((l,i)=>lanes[i]=l);busRestore(p.mixBus);channelRestore(p.channelMixer);$('bpm').value=p.bpm;$('outputGain').value=clamp(Number(p.master)||0,-24,6);for(let i=0;i<TRACK_COUNT;i++){restore(i);capture()}restore(clamp(Math.floor(Number(p.focus))||0,0,TRACK_COUNT-1));message('Session restored with sample audio. Press Play to start.')}catch(err){message('Session restore: '+err.message)}finally{busy=false;e.target.value=''}};
  capture();renderRows();showBpm();
  // Sixteen expandable tracks with direct waveform and piano-roll editing.
  function trackSound(i){const l=lanes[i];return l.sound?.performance?.enabled?l.sound.performance.states?.chop||l.sound:l.sound}
@@ -1484,7 +1673,7 @@ function installSampleLanes(){
  }
  function paintTracks(){for(let i=0;i<trackViews.length;i++)paintTrack(i)}
  function installTrackViews(){
- $('sampleLanes').querySelector('h2').textContent='TRACKS';$('sampleLanes').querySelector('.lane-help').textContent='Load a sample into each track from this computer. Detail selects the pinned wave.';
+ $('sampleLanes').querySelector('h2').textContent='TRACKS';$('sampleLanes').querySelector('.lane-help').textContent='Load a sample into each track from this computer. Each track shows its own waveform. Detail selects the pinned wave; expand a track to edit its piano roll and processing.';
  for(let i=0;i<TRACK_COUNT;i++){const row=$('sampleLane'+i);row.open=false;row.querySelector('summary strong').textContent='TRACK '+(i+1);row.querySelector('[data-action="edit"]').textContent='DETAIL';
  const body=document.createElement('div');body.className='track-workspace';body.innerHTML='<div class="chop-controls track-timing"><label>PLAYBACK<select data-track="mode"><option value="loop">Sample</option><option value="chop">Chops</option><option value="granular">Grains</option><option value="layer">Layer Mix</option></select></label><label>SAMPLE BARS<select data-track="bars"><option>1</option><option>2</option><option>4</option><option>8</option><option>16</option></select></label><label>SAMPLE BPM<input data-track="bpm" type="number" min="1" max="999" step=".01"></label><button data-track="calculate">BPM FROM LENGTH</button><label class="check"><input data-track="sync" type="checkbox">MATCH TEMPO · VARISPEED</label></div><canvas class="track-wave" tabindex="0" aria-label="Track '+(i+1)+' sample waveform: drag cuts, double-click to add, right-click to remove"></canvas><div class="chop-controls"><label>SLICES<select data-track="count"><option>4</option><option>8</option><option selected>16</option><option>32</option></select></label><button data-track="equal">EQUAL SLICES</button><button data-track="detect">DETECT HITS</button><button data-track="source">SOURCE TIMING → ROLL</button><label>PHRASE BARS<select data-track="phrase"><option>1</option><option>2</option><option>4</option><option>8</option></select></label><label>STYLE<select data-track="style"><option value="custom">Current settings</option><option value="flow">Break flow</option><option value="overlap">Overlap tails</option><option value="gated">Gated notes</option><option value="fit">Fit / repitch</option></select></label><label>NOTE LENGTH<select data-track="length"><option value=".25">1/64</option><option value=".5">1/32</option><option value="1" selected>1/16</option><option value="2">1/8</option><option value="4">1/4</option></select></label><label>VELOCITY<input data-track="velocity" type="number" min="1" max="127" value="100"></label><button data-track="delete">DELETE NOTE</button></div><div class="track-roll-viewport"><canvas class="track-roll" tabindex="0" aria-label="Track '+(i+1)+' piano roll"></canvas></div><p class="track-info"></p><details class="track-effects"><summary>TRACK '+(i+1)+' PROCESSING</summary><div class="chop-controls"><button data-effect="filter">FILTER</button><button data-effect="distortion">DRIVE</button><button data-effect="echo">ECHO</button></div><div class="track-dials"></div></details>';
  const waveEl=body.querySelector('.track-wave');row.append(waveEl,body);const q=k=>body.querySelector('[data-track="'+k+'"]');const view={wave:waveEl,roll:body.querySelector('.track-roll'),viewport:body.querySelector('.track-roll-viewport'),bpm:q('bpm'),bars:q('bars'),phrase:q('phrase'),mode:q('mode'),sync:q('sync'),info:body.querySelector('.track-info'),effectDials:[],toggles:{}};trackViews.push(view);
@@ -1567,7 +1756,7 @@ function installSampleLanes(){
  repoBankSelectors.push(select);
  browser.addEventListener('toggle',async()=>{if(!browser.open)return;const waiting=!select.value;if(waiting)summary.textContent='Reading Sabre bank…';try{await refreshRepoBank();if(select.bankStale||!tree.childElementCount)populateRepoBank(select);if(waiting&&!select.value)summary.textContent='Choose a Sabre sample…'}catch(error){summary.textContent='Choose a Sabre sample…';message('Sabre bank: '+error.message);if(select.bankStale)populateRepoBank(select)}});
  const button=document.createElement('button');button.type='button';button.textContent='LOAD INTO TRACK '+(i+1);bar.append(label,button);
- const row=$('sampleLane'+i),card=document.createElement('div');card.className='lane-card';row.replaceWith(card);card.append(row,bar);
+ const row=$('sampleLane'+i),card=document.createElement('div');card.className='lane-card';row.replaceWith(card);card.append(row,trackViews[i].wave,bar);
  button.onclick=async()=>{if(busy)return;button.disabled=true;select.disabled=true;try{if(!select.value){summary.textContent='Reading Sabre bank…';await refreshRepoBank();populateRepoBank(select);summary.textContent='Choose a Sabre sample…';message('Choose a sample in track '+(i+1)+'’s Sabre bank.');return}const path=select.value;message('Fetching '+path.split('/').at(-1)+' for track '+(i+1)+'…');const response=await fetch(repoSampleUrl(path));if(!response.ok)throw Error('Sample download failed ('+response.status+').');const blob=await response.blob();if(busy)throw Error('Please retry after the current operation.');capture();restore(i);const ok=await load(new File([blob],path.split('/').at(-1)));if(ok===false||!buffer)throw Error('Sample could not be decoded.');capture();renderRows();message(path.split('/').at(-1)+' loaded into track '+(i+1)+'.')}catch(error){message('Track '+(i+1)+': '+error.message)}finally{button.disabled=false;select.disabled=false}};
  }
  const presetBar=document.createElement('div');presetBar.className='chop-controls';presetBar.innerHTML='<label>USER PRESET NAME<input id="sabreUserName" maxlength="80" placeholder="Name this arrangement"></label><button id="sabreUserSave">SAVE SABRE STATE</button><label>USER PRESETS<select id="sabreUserList"></select></label><button id="sabreUserLoad">LOAD USER PRESET</button><button id="sabreUserExport">EXPORT USER PRESET</button><label>IMPORT USER PRESET<input id="sabreUserImport" type="file" accept=".json,application/json"></label>';
@@ -1582,6 +1771,184 @@ function installSampleLanes(){
  $('sabreUserImport').onchange=async e=>{try{const f=e.target.files[0];if(!f)return;if(f.size>20*1024*1024)throw Error('Use Restore Session for files over 20 MB.');const p=JSON.parse(await f.text());if(p.format!=='continuum-sabre-user-preset'||typeof p.name!=='string'||!validTrackSession(p.state))throw Error('Invalid user preset.');saveNamed(p.name,p.state);message('User preset imported. Select Load User Preset to restore it.')}catch(err){message('User import: '+err.message)}finally{e.target.value=''}};
  refresh();
  }
+
+  // OUTPUT MIXER: 16 channel columns × parameter rows, actual channel DSP retained.
+  // Do not create a separate audio clock or independent channel processing path.
+  function installOutputMixer(){
+   const root=document.createElement('section');root.id='outputMixer';root.className='output-mixer';root.setAttribute('aria-label','Sixteen-channel output mixer');
+   root.innerHTML='<header class="console-head"><div><h2>OUTPUT MIXER <span>· 16 CHANNELS</span></h2><p>One parameter per row, channel 01–16 across. Post-layer EQ → dynamics → shared bus. Low / high shelves: 120 Hz / 8 kHz; sweepable mid frequency and Q.</p></div></header><div class="console-scroll" id="consoleScroll" tabindex="0" aria-label="Mixer matrix, 16 channels across; scroll horizontally on narrow screens"><div class="console-channels" id="consoleChannels"></div></div><p class="console-footnote">All 16 tracks retain their independent EQ, dynamics, pan, level, mute, solo and track edit. Detailed parameters are visible as separate rows. Save/restore and mix export use the same channel processing. Console-style DSP, not a hardware-emulation claim.</p>';
+   let dialStyle='original';try{if((localStorage.getItem('sabre-dial-style')||localStorage.getItem('sabre-mixer-dial-style'))==='graphic')dialStyle='graphic'}catch{}
+   const styleButton=document.createElement('button');styleButton.id='mixerDialStyle';styleButton.type='button';styleButton.setAttribute('aria-label','Use graphic dials across Sabre');
+   function applyDialStyle(){root.dataset.dialStyle=dialStyle;document.documentElement.dataset.dialStyle=dialStyle;styleButton.textContent='GRAPHIC DIALS';styleButton.setAttribute('aria-pressed',String(dialStyle==='graphic'));styleButton.title='Switch all Sabre dials between original knobs and graphic dials';}
+   styleButton.onclick=()=>{dialStyle=dialStyle==='original'?'graphic':'original';applyDialStyle();try{localStorage.setItem('sabre-dial-style',dialStyle)}catch{}};
+   $('transport').append(styleButton);applyDialStyle();
+   $('sampleLanes').after(root);
+   const host=$('consoleChannels'), holders=Array.from({length:TRACK_COUNT},()=>({dials:[],buttons:{},name:null,fader:null,levelOut:null,vu:null,cells:[]}));
+   const rows={};
+   function addRow(id,title,type,sectionStart=false){
+     const row=document.createElement('div');row.className='console-matrix-row';row.dataset.row=id;row.dataset.type=type;if(sectionStart)row.dataset.sectionStart='true';
+     row.setAttribute('role','group');row.setAttribute('aria-label',title+' · 16 channels');
+     const heading=document.createElement('div');heading.className='console-row-heading';heading.textContent=title;row.append(heading);
+     const cells=[];
+     for(let i=0;i<TRACK_COUNT;i++){const cell=document.createElement('div');cell.className='console-matrix-cell';cell.dataset.channel=i+1;cell.dataset.active='false';row.append(cell);cells.push(cell);holders[i].cells.push(cell)}
+     host.append(row);rows[id]={row,cells};return cells;
+   }
+   const plan=[
+     ['header','CHANNEL','header',true],['eqOn','EQ ON/OFF','switch',true],
+     ['lowGain','LOW','dial',false],['midGain','MID','dial',false],['midFreq','MID FREQ','dial',false],['midQ','MID Q','dial',false],['highGain','HIGH','dial',false],
+     ['dynOn','DYNAMICS','switch',true],['threshold','THRESH','dial',false],['ratio','RATIO','dial',false],['attack','ATTACK','dial',false],['release','RELEASE','dial',false],
+     ['pan','PAN','dial',true],['level','LEVEL','fader',false],['meter','METER','meter',false],
+     ['mute','MUTE','button',true],['solo','SOLO','button',false],['edit','TRACK EDIT','button',false],['flat','FLAT EQ','button',false]
+   ];
+   for(const [id,title,type,first] of plan)addRow(id,title,type,first);
+   // The value, progress arc and physical pointer all resolve from the SAME snapped step index.
+   // Redrawing uses fixed SVG coordinates, not a rotating group transform.
+   function makeDial(i,key,name,min,max,step,log=false,unit='dB'){
+     const cell=document.createElement('div');cell.className='console-dial-cell';
+     const label=document.createElement('label');label.textContent=name;
+     const button=document.createElement('button');button.type='button';button.className='console-dial';button.dataset.param=key;button.setAttribute('role','slider');
+     button.setAttribute('aria-label','Channel '+(i+1)+' '+name);button.setAttribute('aria-valuemin',String(min));button.setAttribute('aria-valuemax',String(max));
+     button.title=name+' · '+min+' to '+max+' '+unit+' · Drag vertically · Shift = fine · arrows = step · double click = reset';
+     const pos=(degrees,radius)=>{const a=degrees*Math.PI/180;return {x:32+radius*Math.sin(a),y:32-radius*Math.cos(a)}};
+     const start=pos(-135,28),finish=pos(135,28);
+     const ticks=[-135,-67.5,0,67.5,135].map(angle=>{const a=pos(angle,29),b=pos(angle,31);return '<line class="console-dial-tick" x1="'+a.x+'" y1="'+a.y+'" x2="'+b.x+'" y2="'+b.y+'"/>'}).join('');
+     button.innerHTML='<svg viewBox="0 0 64 64" aria-hidden="true"><path class="console-dial-track" d="M '+start.x+' '+start.y+' A 28 28 0 1 1 '+finish.x+' '+finish.y+'"/>'+ticks+'<path class="console-dial-progress"/><circle class="console-dial-face control-surface" cx="32" cy="32" r="23"/><line class="console-dial-pointer" x1="32" y1="32" x2="32" y2="16"/><path class="control-geometry mixer-graphic"/><circle class="rotary-pointer mixer-graphic mixer-dot" cx="32" cy="4" r="2.1"/></svg>';
+     const output=document.createElement('output');cell.append(label,button,output);
+     const pointer=button.querySelector('.console-dial-pointer'),progress=button.querySelector('.console-dial-progress');
+     const totalSteps=Math.round((max-min)/step);
+     const index=v=>Math.max(0,Math.min(totalSteps,Math.round((Number(v)-min)/step)));
+     const snapped=v=>Number((min+index(v)*step).toFixed(6));
+     // Bipolar EQ gains and pan have a true 12 o'clock zero, regardless of
+     // asymmetrical -18/+12 dB ranges. This is visual only; DSP is unchanged.
+     const bipolar=!log && min<0 && max>0;
+     const zeroIndex=bipolar?index(0):-1;
+     const toFraction=v=>log?Math.log(Math.max(min,v)/min)/Math.log(max/min):bipolar?(v<0?.5+.5*v/Math.abs(min):.5+.5*v/max):(v-min)/(max-min);
+     const fromFraction=t=>log?min*Math.pow(max/min,t):bipolar?(t<.5?(t-.5)*2*Math.abs(min):(t-.5)*2*max):min+t*(max-min);
+     const posZero=pos(0,28);
+     const get=()=>key==='pan'?lanes[i].pan:channelStates[i][key];
+     const defaultValue=key==='pan'?0:CHANNEL_DEFAULT()[key];
+     const fmt=v=>unit==='Hz'?(v>=1000?(v/1000).toFixed(2)+'k':Math.round(v))+' Hz':unit==='dB'?(v>0?'+':'')+v.toFixed(1)+' dB':unit==='%'?Math.round(v)+'%':unit===':1'?v.toFixed(1)+':1':unit==='ms'?(v<10?v.toFixed(1):Math.round(v))+' ms':unit==='Q'?v.toFixed(1):String(v);
+     function glyph(){
+       const state=channelStates[i],v=snapped(get());
+       if(['lowGain','midGain','midFreq','midQ','highGain'].includes(key)){
+         let path='';
+         for(let j=0;j<=40;j++){
+           const t=j/40,x=14+t*36;
+           const gain=key==='lowGain'?state.lowGain:key==='highGain'?state.highGain:state.midGain;
+           const frequency=Math.log(state.midFreq/20)/Math.log(20000/20),width=.28/Math.sqrt(state.midQ);
+           const shape=key==='lowGain'?1/(1+Math.exp((t-.4)*16)):key==='highGain'?1/(1+Math.exp((.6-t)*16)):Math.exp(-.5*Math.pow((t-frequency)/width,2));
+           const y=32-gain*.6*shape;path+=(j?'L ':'M ')+x+' '+y+' ';
+         }
+         // A frequency/Q guide remains visible when the EQ gain is flat.
+         if(key==='midFreq'){const x=14+36*Math.log(v/20)/Math.log(20000/20);path+='M '+x+' 26 V 38';}
+         if(key==='midQ'){const width=Math.min(17,10/Math.sqrt(v));path+='M '+(32-width)+' 39 Q 32 17 '+(32+width)+' 39';}
+         return path;
+       }
+       if(key==='threshold'||key==='ratio'){
+         const knee=18+(state.threshold+100)/100*23;
+         return 'M 15 46 L '+knee+' '+(61-knee)+' L 49 '+(61-knee-(49-knee)/state.ratio);
+       }
+       if(key==='pan'){const x=16+(v+100)/200*32;return 'M 16 35 H 48 M 32 29 V 41 M '+x+' 25 V 41';}
+       return controlGlyph(key,toFraction(v));
+     }
+     let drag=null;
+     const repaint=()=>{
+       const n=index(get()),enabled=key==='pan'||(['lowGain','midGain','midFreq','midQ','highGain'].includes(key)?channelStates[i].eqOn:channelStates[i].dynOn);
+       button.dataset.enabled=String(enabled);button.querySelector('.mixer-graphic.control-geometry').setAttribute('d',glyph());
+       // Match the drawn pointer to the same logarithmic scale used for MID FREQ dragging.
+       const v=snapped(get()),fraction=toFraction(v);
+       const angle=-135+fraction*270;
+       const tip=pos(angle,16),end=pos(angle,28);
+       pointer.setAttribute('x2',tip.x.toFixed(4));pointer.setAttribute('y2',tip.y.toFixed(4));
+       const dot=button.querySelector('.mixer-dot'),dotTip=pos(angle,28);dot.setAttribute('cx',dotTip.x);dot.setAttribute('cy',dotTip.y);
+       if(bipolar){
+         progress.setAttribute('d',n===zeroIndex?'':'M '+posZero.x+' '+posZero.y+' A 28 28 0 0 '+(v>0?1:0)+' '+end.x.toFixed(4)+' '+end.y.toFixed(4));
+       }else{
+         progress.setAttribute('d',n===0?'':'M '+start.x+' '+start.y+' A 28 28 0 '+(fraction*270>180?1:0)+' 1 '+end.x.toFixed(4)+' '+end.y.toFixed(4));
+       }
+       button.setAttribute('aria-valuenow',String(v));button.setAttribute('aria-valuetext',fmt(v));output.textContent=fmt(v);
+     };
+     const set=v=>{
+       if(!Number.isFinite(v))return;const next=snapped(v);if(index(get())===index(next))return;
+       if(key==='pan'){lanes[i].pan=next;renderRows()}else channelSet(i,key,next);
+     };
+     button.addEventListener('pointerdown',e=>{
+       if(e.button!==0||!e.isPrimary)return;e.preventDefault();button.focus({preventScroll:true});
+       drag={id:e.pointerId,lastY:e.clientY,fraction:toFraction(snapped(get())),idx:index(get())};
+       button.setPointerCapture(e.pointerId);
+     });
+     button.addEventListener('pointermove',e=>{
+       if(!drag||drag.id!==e.pointerId)return;
+       // Integrate each movement at the current sensitivity. Changing Shift must
+       // never rescale distance already travelled or make the pointer jump back.
+       const delta=drag.lastY-e.clientY;drag.lastY=e.clientY;
+       if(!delta)return;
+       drag.fraction=Math.max(0,Math.min(1,drag.fraction+delta/(e.shiftKey?950:270)));
+       const raw=fromFraction(drag.fraction),current=min+drag.idx*step;
+       // A small hysteresis around each detent stops boundary jitter. Accumulate
+       // fine movements so no parameter develops an unresponsive pixel dead zone.
+       if(Math.abs(raw-current)<step*.6&&drag.fraction>0&&drag.fraction<1)return;
+       const nextIndex=index(raw);
+       if(nextIndex!==drag.idx){drag.idx=nextIndex;set(min+nextIndex*step);}
+     });
+     for(const evt of ['pointerup','pointercancel','lostpointercapture'])button.addEventListener(evt,e=>{if(drag&&drag.id===e.pointerId){drag=null;repaint()}});
+     button.addEventListener('dblclick',e=>{e.preventDefault();set(defaultValue)});
+     button.addEventListener('keydown',e=>{
+       if(!['ArrowUp','ArrowRight','ArrowDown','ArrowLeft','Home','End'].includes(e.key))return;e.preventDefault();
+       const dir=e.key==='ArrowUp'||e.key==='ArrowRight'?1:-1;
+       if(e.key==='Home')set(min);else if(e.key==='End')set(max);
+       else set(snapped(get())+dir*step);
+     });
+     repaint();return {cell,repaint,button};
+   }
+   const dialSpecs=[
+    ['lowGain','LOW',-24,24,.5,false,'dB'],['midGain','MID',-24,24,.5,false,'dB'],['midFreq','MID FREQ',20,20000,10,true,'Hz'],
+    ['midQ','MID Q',.1,18,.1,false,'Q'],['highGain','HIGH',-24,24,.5,false,'dB'],
+    ['threshold','THRESH',-100,0,1,false,'dB'],['ratio','RATIO',1,20,.1,false,':1'],
+    ['attack','ATTACK',.1,1000,.1,false,'ms'],['release','RELEASE',10,1000,10,false,'ms'],['pan','PAN',-100,100,2,false,'%']
+   ];
+   for(let i=0;i<TRACK_COUNT;i++){
+     const holder=holders[i],header=rows.header.cells[i];
+     const name=document.createElement('span');name.className='console-track-name';name.textContent='NO SAMPLE';name.title='No sample loaded';
+     header.classList.add('console-header-cell');const n=document.createElement('strong');n.textContent='CH '+String(i+1).padStart(2,'0');header.append(n,name);holder.name=name;
+     for(const [key,label,min,max,step,log,unit] of dialSpecs){const control=makeDial(i,key,label,min,max,step,log,unit);rows[key].cells[i].append(control.cell);holder.dials.push(control.repaint)}
+     for(const [kind,key] of [['eq','eqOn'],['dyn','dynOn'],['mute','mute'],['solo','solo']]){
+       const b=document.createElement('button');b.type='button';b.className='console-tiny-button';b.dataset.mixer=kind;b.setAttribute('aria-pressed','false');
+       b.setAttribute('aria-label','Channel '+(i+1)+' '+kind+' toggle');
+       const rowId=kind==='eq'?'eqOn':kind==='dyn'?'dynOn':kind;
+       rows[rowId].cells[i].append(b);holder.buttons[kind]=b;
+       b.onclick=()=>{if(kind==='eq'||kind==='dyn')channelSet(i,key,!channelStates[i][key]);else{lanes[i][kind]=!lanes[i][kind];renderRows()}};
+     }
+     const fader=document.createElement('input');fader.type='range';fader.className='console-level';fader.min='0';fader.max='100';fader.step='1';fader.value='75';fader.setAttribute('aria-label','Channel '+(i+1)+' level');
+     const faderOut=document.createElement('output');faderOut.className='console-level-value';rows.level.cells[i].append(fader,faderOut);
+     fader.oninput=()=>{lanes[i].level=Number(fader.value);renderRows()};holder.fader=fader;holder.levelOut=faderOut;
+     const meter=document.createElement('div');meter.className='console-vu';meter.setAttribute('aria-label','Channel '+(i+1)+' meter');const bar=document.createElement('span');bar.className='console-vu-bar';meter.append(bar);rows.meter.cells[i].append(meter);holder.vu=bar;
+     const edit=document.createElement('button');edit.type='button';edit.className='console-tiny-button';edit.dataset.mixer='edit';edit.textContent='EDIT';edit.title='Open channel '+(i+1)+' in TRACKS';rows.edit.cells[i].append(edit);
+     edit.onclick=()=>{if(busy)return;capture();restore(i);document.getElementById('tabTracks')?.click();$('sampleLanes').open=true;$('sampleLane'+i).open=true;requestAnimationFrame(()=>$('sampleLane'+i)?.scrollIntoView({behavior:'smooth',block:'start'}))};
+     const flat=document.createElement('button');flat.type='button';flat.className='console-tiny-button console-flat';flat.textContent='FLAT EQ';flat.title='Reset EQ gains for channel '+(i+1);rows.flat.cells[i].append(flat);
+     flat.onclick=()=>{for(const key of ['lowGain','midGain','highGain'])channelStates[i][key]=0;channelStates[i].eqOn=false;for(const b of busRuntimes)if(b.ctx===context)channelApply(b,i);paint(i)};
+   }
+   function paint(i){
+     const indices=Number.isInteger(i)?[i]:Array.from({length:TRACK_COUNT},(_,j)=>j);
+     for(const n of indices){const h=holders[n],l=lanes[n],s=channelStates[n];
+       h.name.textContent=l.name||'NO SAMPLE';h.name.title=l.name||'No sample loaded';
+       for(const c of h.cells)c.dataset.active=String(n===focus);
+       for(const [key,active,label] of [['eq',s.eqOn,'EQ'],['dyn',s.dynOn,'DYN'],['mute',l.mute,'MUTE'],['solo',l.solo,'SOLO']]){
+         const b=h.buttons[key];b.setAttribute('aria-pressed',String(active));b.textContent=label+((key==='eq'||key==='dyn')?(active?' · ON':' · OFF'):'');
+       }
+       h.fader.value=String(l.level);h.levelOut.textContent=l.level+'%';for(const repaint of h.dials)repaint();
+     }
+   }
+   channelMixerRender=paint;paint();
+   setInterval(()=>{if(root.closest('[hidden]')||!running||!mix?.channelStrips)return;for(let i=0;i<TRACK_COUNT;i++){
+     const strip=mix.channelStrips[i],data=strip.meterSamples;strip.meter.getFloatTimeDomainData(data);
+     let peak=0;for(const sample of data)peak=Math.max(peak,Math.abs(sample));const db=peak?20*Math.log10(peak):-72;
+     holders[i].vu.style.setProperty('--meter-level',Math.max(0,Math.min(100,(db+60)*100/60))+'%');
+     holders[i].vu.parentElement.title='Channel '+(i+1)+' '+db.toFixed(1)+' dBFS';
+   }},160);
+  }
+  installOutputMixer();
+
  installRepoBank();
 
 
@@ -1594,14 +1961,14 @@ function installWorkspacePages(){
  // Grains keeps the grain engine. Effects keeps the gate, filter, echo and the links that drive them.
  const nav=document.createElement('nav');
  nav.className='workspace-nav';nav.setAttribute('aria-label','Sabre workspaces');
- nav.innerHTML='<div class="workspace-tabs" role="tablist" aria-label="Workspace sections"><button type="button" role="tab" id="tabTracks" aria-controls="pageTracks" aria-selected="true">TRACKS</button><button type="button" role="tab" id="tabGrains" aria-controls="pageGrains" aria-selected="false" tabindex="-1">LAB</button><button type="button" role="tab" id="tabRack" aria-controls="pageRack" aria-selected="false" tabindex="-1">EFFECTS</button></div>';
+ nav.innerHTML='<div class="workspace-tabs" role="tablist" aria-label="Workspace sections"><button type="button" role="tab" id="tabTracks" aria-controls="pageTracks" aria-selected="true">TRACKS</button><button type="button" role="tab" id="tabGrains" aria-controls="pageGrains" aria-selected="false" tabindex="-1">LAB</button><button type="button" role="tab" id="tabRack" aria-controls="pageRack" aria-selected="false" tabindex="-1">EFFECTS</button><button type="button" role="tab" id="tabMixer" aria-controls="pageMixer" aria-selected="false" tabindex="-1">MIXER</button></div>';
  $('play').after(nav);
  const actions=document.createElement('div');actions.className='workspace-actions';$('transport').append(actions);
  actions.append($('saveLaneSession'));
  const exportButton=document.createElement('button');exportButton.id='workspaceExport';exportButton.type='button';exportButton.textContent='EXPORT';exportButton.setAttribute('aria-expanded','false');exportButton.setAttribute('aria-controls','workspaceExportPanel');actions.append(exportButton);
  const exportPanel=document.createElement('section');exportPanel.id='workspaceExportPanel';exportPanel.className='workspace-export';exportPanel.hidden=true;exportPanel.setAttribute('aria-label','Export settings');
  const close=document.createElement('button');close.className='workspace-export-close';close.type='button';close.textContent='CLOSE EXPORT';exportPanel.append(close,document.querySelector('.export'));$('pinnedSpacer').after(exportPanel);
- const pages={},keys=['Tracks','Grains','Rack'];let anchor=exportPanel;
+ const pages={},keys=['Tracks','Grains','Rack','Mixer'];let anchor=exportPanel;
  for(const key of keys){const page=document.createElement('section');page.id='page'+key;page.className='workspace-page';page.setAttribute('role','tabpanel');page.setAttribute('aria-labelledby','tab'+key);page.hidden=key!=='Tracks';anchor.after(page);anchor=page;pages[key]=page}
  pages.Tracks.classList.add('performance-desk');
  const move=(key,selector)=>{const el=document.querySelector(selector);if(el)pages[key].append(el)};
@@ -1628,6 +1995,7 @@ function installWorkspacePages(){
  move('Rack','#linkedPerformance');
  for(const selector of ['.rack-heading','.processing-racks'])move('Rack',selector);
  const checks=document.querySelector('.audio-checks');if(checks)pages.Rack.append(checks);
+ move('Mixer','#outputMixer');
  $('sampleLanes').open=false;$('dropzone').open=false;$('chopper').open=false;
  // Do not move macroAutomation from grainComposer: it belongs to the grain-processing workflow.
  $('macroAutomation').open=false;
@@ -1637,7 +2005,7 @@ function installWorkspacePages(){
    for(const name of keys){pages[name].hidden=name!==key;const b=$('tab'+name);b.setAttribute('aria-selected',String(name===key));b.tabIndex=name===key?0:-1}
    // Changing pages must not stop audio, change active track, or restart transport.
    window.scrollTo({top:0,behavior:'instant'});
-   requestAnimationFrame(()=>{window.dispatchEvent(new Event('resize'));renderChopRoll();drawWave();gcDraw();if(typeof busDrawEQ==='function')busDrawEQ()});
+   requestAnimationFrame(()=>{window.dispatchEvent(new Event('resize'));renderChopRoll();drawWave();gcDraw();if(typeof busDrawEQ==='function')busDrawEQ();channelMixerRender?.()});
  }
  keys.forEach((key,i)=>{const b=$('tab'+key);b.onclick=()=>choose(key);b.onkeydown=e=>{
    if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;
